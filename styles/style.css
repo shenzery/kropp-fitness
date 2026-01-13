@@ -247,3 +247,23 @@ svg * {
   --container-padding-x: 15px;
   --transition-duration: 0.2s;
 }
+
+body{
+  font-family: var(--font--family-base);
+  color: var(--color-light-gray);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 175%;
+  background-color: var(--color-dark);
+}
+
+.container{
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline:auto;
+  padding-inline: var(--container-padding-x);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
