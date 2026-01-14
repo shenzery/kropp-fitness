@@ -238,6 +238,7 @@ svg * {
   --color-light: #FFFFFF;
   --color-dark-gray: #404040;
   --color-light-gray: #C4C4C4;
+  --color-dark-alternate: #131619;
   --border-radius: 30px;
   --border: 1px solid var(--color-light);
   --font-family-base: 'Heebo', sans-serif;
@@ -312,6 +313,20 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   column-gap: 20px;
   padding-inline: 32px;
+  background-color: var(--color-dark-alternate);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
 }
 
 .header-logo{
@@ -339,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
 .header-menu-link.is-current::after{
   content: "";
   width: 5px;
-  height: 5px;
+  aspect-ratio: 1;
   background-color: currentColor;
   border-radius: 50%;
 }
@@ -355,12 +370,12 @@ h1, h2, h3, h4, h5, h6 {
   row-gap: 4px;
   justify-content: center;
   width: 40px;
-  height: 40px;
+  aspect-ratio: 1;
   padding-left: 8px;
   background-color: transparent;
   border: var(--border);
   color: var(--color-light);
-  border-radius: var(--border-radius);
+  border-radius: 50%;
 }
 
 .header-burger-button-line{
