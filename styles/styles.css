@@ -286,6 +286,16 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
+.button{
+  display: inline-flex;
+  height: 38px;
+  align-items: center;
+  padding-inline: 26px;
+  border-radius: var(--border-radius);
+  font-family: var(--font-family-base);
+  
+}
+
 .header {
   justify-content: space-between;
   display: flex;
