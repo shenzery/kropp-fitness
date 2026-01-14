@@ -258,6 +258,23 @@ body{
   font-family: var(--font-family-base);
 }
 
+a,
+input,
+button,
+textarea,
+svg *{
+  transition-duration: var(--transition-duration);
+}
+
+a{
+  color: var(--color-light);
+}
+
+a:hover{
+  color: var(--color-light-gray);
+  
+}
+
 .container{
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   margin-inline:auto;
@@ -267,4 +284,36 @@ body{
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.header {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.header-menu-list{
+  display: flex;
+  column-gap: 50px;
+}
+
+.header-menu-link{
+  display: inline-flex;
+  height: 90px;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  column-gap: 7px;
+}
+
+.header-menu-link.is-current::after{
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: currentColor;
+  border-radius: 50%;
 }
