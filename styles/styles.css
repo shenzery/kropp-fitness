@@ -644,6 +644,12 @@ input:focus {
   background: url("../images/join-us-bg.jpg") center/cover no-repeat var(--color-dark-alternate);
 }
 
+.join-us-video {
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+}
+
 .join-us-video-play-button {
   position: absolute;
   top: 50%;
@@ -723,6 +729,7 @@ input:focus {
   line-height: 1.65;
   font-size: 20px;
   color: var(--color-light);
+  text-align: center;
 }
 
 .join-us-form-input {
@@ -788,6 +795,14 @@ input:focus {
   .motivation-card {
     padding-block: 50px;
   }
+
+  .join-us-body {
+    padding-bottom: 80px;
+  }
+  
+  .join-us-title:not(:last-child) {
+    margin-bottom: 80px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -851,6 +866,25 @@ input:focus {
   .training-types-image {
     max-width: 120px;
   }
+  
+  .join-us-video-play-button {
+    width: 140px;
+  }
+
+  .join-us-title:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  
+  .join-us-form-subtitle {
+    font-size: 16px;
+  }
+  
+  .join-us-form-body {
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+  }
 }
+
 
 
