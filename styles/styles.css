@@ -94,9 +94,11 @@ body,
   чтобы избежать взаимодействие с более сложным селектором
  */
 p {
-  --paragraphMarginBottom: 24px;
-
   margin-block: 0;
+}
+
+p:not([class]):not(:last-child){
+  margin-bottom: 24px;
 }
 
 /**
@@ -250,7 +252,7 @@ svg * {
   --header-height: 90px;
 }
 
-body{
+body {
   color: var(--color-light-gray);
   font-weight: 300;
   font-size: 16px;
@@ -264,22 +266,22 @@ a,
 input,
 button,
 textarea,
-svg *{
+svg * {
   transition-duration: var(--transition-duration);
 }
 
-a{
+a {
   color: var(--color-light);
 }
 
-a:hover{
+a:hover {
   color: var(--color-light-gray);
-  
+
 }
 
-.container{
+.container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-  margin-inline:auto;
+  margin-inline: auto;
   padding-inline: var(--container-padding-x);
 }
 
@@ -288,18 +290,18 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-.title-medium{
+.title-medium {
   font-size: 40px;
   line-height: 1.3;
   color: var(--color-light);
 }
 
-.backdrop-title{
-   position: relative;
-   z-index: 2;
- }
+.backdrop-title {
+  position: relative;
+  z-index: 2;
+}
 
-.backdrop-title::before{
+.backdrop-title::before {
   content: '';
   position: absolute;
   right: calc(100% + 8px);
@@ -309,7 +311,20 @@ h1, h2, h3, h4, h5, h6 {
   background: url('../icons/plus.svg') center/contain no-repeat;
 }
 
-.button{
+.backdrop-title::after {
+  content: attr(data-title);
+  font-size: 2.8em;
+  font-family: var(--font-family-accent);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-light-gray);
+  text-stroke: 1px var(--color-light-gray);
+  position: absolute;
+  z-index: -1;
+  top: -0.45em;
+  left: -0.6em;
+}
+
+.button {
   display: inline-flex;
   height: 38px;
   align-items: center;
@@ -323,9 +338,35 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px;
   background-color: var(--color-light);
   white-space: nowrap;
+  text-decoration: none;
 }
 
-.button:hover{
+.button:hover {
+  background-color: var(--color-light-gray);
+}
+
+.button.transparent {
+  height: var(--input-height);
+  padding-left: 31px;
+  padding-right: 80px;
+  background-color: transparent;
+  border: var(--border);
+  position: relative;
+}
+
+.button.transparent::after {
+  content: '';
+  background: url('../icons/arrow.svg') center/80% no-repeat;
+  height: 100%;
+  aspect-ratio: 1;
+  position: absolute;
+  border: var(--border);
+  border-radius: 50%;
+  right: 0;
+}
+
+.button.transparent:hover {
+  color: var(--color-dark);
   background-color: var(--color-light-gray);
 }
 
@@ -352,17 +393,17 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden !important;
 }
 
-.header-logo{
+.header-logo {
   flex-shrink: 0;
 }
 
-.header-menu-list{
+.header-menu-list {
   display: flex;
   column-gap: 50px;
   flex-wrap: wrap;
 }
 
-.header-menu-link{
+.header-menu-link {
   display: inline-flex;
   height: var(--header-height);
   align-items: center;
@@ -374,7 +415,7 @@ h1, h2, h3, h4, h5, h6 {
   column-gap: 7px;
 }
 
-.header-menu-link.is-current::after{
+.header-menu-link.is-current::after {
   content: "";
   width: 5px;
   aspect-ratio: 1;
@@ -382,12 +423,12 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
 }
 
-.header-actions{
+.header-actions {
   display: flex;
-  column-gap: 40px; 
+  column-gap: 40px;
 }
 
-.header-burger-button{
+.header-burger-button {
   display: inline-flex;
   flex-direction: column;
   row-gap: 4px;
@@ -401,14 +442,14 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
 }
 
-.header-burger-button-line{
+.header-burger-button-line {
   width: 6px;
   height: 1px;
   background-color: currentColor;
   box-shadow: 16px 0 0 currentColor;
 }
 
-.header-burger-button:hover{
+.header-burger-button:hover {
   color: var(--color-light-gray);
   border-color: currentColor;
 }
@@ -421,14 +462,14 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-light);
   color-background: var(--color-dark-alternate);
   min-height: calc(100vh - var(--header-height));
-  background-color: var(--color-dark-alternate  );
+  background-color: var(--color-dark-alternate);
 }
 
-.banner-body{
+.banner-body {
   text-transform: uppercase;
 }
 
-.banner-info{
+.banner-info {
   display: flex;
   align-items: end;
   font-size: clamp(14px, 1.56vw, 30px);
@@ -436,7 +477,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-.banner-info::before{
+.banner-info::before {
   content: '';
   width: clamp(60px, 10.1vw, 194px);
   aspect-ratio: 1;
@@ -444,33 +485,33 @@ h1, h2, h3, h4, h5, h6 {
   background: url('../icons/Vector.svg') center/contain no-repeat;
 }
 
-.banner-title{
+.banner-title {
   font-size: min(18.75vw, 360px);
   line-height: 1;
 }
 
-.banner-pagination-list{
+.banner-pagination-list {
   display: flex;
   justify-content: center;
 }
 
-.banner-pagination-item{
+.banner-pagination-item {
   display: flex;
 }
 
-.banner-pagination-button{
+.banner-pagination-button {
   display: flex;
   padding: 7px;
   background-color: transparent;
   border: none;
 }
 
-.banner-pagination-button.is-current::after{
+.banner-pagination-button.is-current::after {
   background-color: var(--color-light);
 }
 
-.banner-pagination-button::after{
-  content:'';
+.banner-pagination-button::after {
+  content: '';
   width: 10px;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -478,81 +519,105 @@ h1, h2, h3, h4, h5, h6 {
   transition-duration: var(--transition-duration);
 }
 
-.banner-pagination-button:not(.is-current):hover::after{
+.banner-pagination-button:not(.is-current):hover::after {
   border-color: var(--color-light-gray);
-  
+
 }
 
-.motivation-item:nth-child(even){
+.motivation-item:nth-child(even) {
   background-color: var(--color-dark-alternate);
 }
 
-.motivation-item:nth-child(even) .motivation-card{
+.motivation-item:nth-child(even) .motivation-card {
   flex-direction: row-reverse;
 }
 
-.motivation-card{
+.motivation-card {
   display: flex;
   justify-content: start;
   align-items: center;
   column-gap: clamp(30px, 10.42vw, 200px);
 }
 
-.motivation-card-image{
+.motivation-card-image {
   margin-block: -60px;
 }
 
-.motivation-card-body{
+.motivation-card-body {
   padding-left: 35px;
 }
+
+.motivation-card-description{
+  max-width: 400px;
+}
+
+.motivation-card-title:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.motivation-card-description:not(:last-child) {
+  margin-bottom: 37px;
+}
+
 
 @media (max-width: 1024px) {
   :root {
     --header-height: 120px;
   }
-  .header{
+
+  .header {
     flex-wrap: wrap;
     row-gap: 10px;
     padding-top: 20px;
     min-height: var(--header-height);
   }
-  .header-menu{
-    order:1;
-    flex-basis:100%;
+
+  .header-menu {
+    order: 1;
+    flex-basis: 100%;
   }
-  .header-menu-link{
+
+  .header-menu-link {
     height: 50px;
   }
-  .banner{
-    row-gap:10px;
+
+  .banner {
+    row-gap: 10px;
   }
+
   .banner,
   .header {
     padding-inline: 22px;
   }
 }
 
-@media (max-width: 767px){
-  .header{
+@media (max-width: 767px) {
+  .header {
     padding-top: 10px;
     padding-inline: 14px;
   }
-  .header-menu-link{
+
+  .header-menu-link {
     height: 32px;
   }
-  .header-menu-list{
+
+  .header-menu-list {
     column-gap: 24px;
   }
-  .header-actions{
+
+  .header-actions {
     column-gap: 15px;
   }
-  .button{
-    pudding-inline:14px;
+
+  .button {
+    pudding-inline: 14px;
   }
-  .banner-info::before{
+
+  .banner-info::before {
     margin-right: 15px;
   }
-  .banner-info{
+
+  .banner-info {
     margin-bottom: 5px;
   }
 }
