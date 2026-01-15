@@ -400,6 +400,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-light);
   color-background: var(--color-dark-alternate);
   min-height: calc(100vh - var(--header-height));
+  background-color: var(--color-dark-alternate  );
 }
 
 .banner-body{
@@ -463,10 +464,14 @@ h1, h2, h3, h4, h5, h6 {
 
 
 @media (max-width: 1024px) {
+  :root {
+    --header-height: 120px;
+  }
   .header{
     flex-wrap: wrap;
     row-gap: 10px;
     padding-top: 20px;
+    min-height: var(--header-height);
   }
   .header-menu{
     order:1;
