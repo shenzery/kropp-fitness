@@ -364,7 +364,8 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--color-light-gray);
 }
 
-input::placeholder {
+input::placeholder,
+select.input:invalid {
   color: var(--color-light-gray);
 }
 
@@ -376,6 +377,15 @@ input:focus {
   color: var(--color-dark);
   background-color: var(--color-light-gray);
   outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance:textfield;
 }
 
 .button:hover {
@@ -803,6 +813,50 @@ input:focus {
   scroll-snap-align: start;
 }
 
+.calculate {
+  padding-block: 146px;
+  background-color: var(--color-dark-alternate);
+}
+
+.calculate-inner {
+  display: flex;
+  align-items: center;
+  column-gap: 36px;
+}
+
+.calculate-body {
+  flex-grow: 1;
+  max-width: 627px;
+}
+
+.calculate-title:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.calculate-description:not(:last-child) {
+  margin-bottom: 30px;
+  max-width: 385px;
+}
+
+.calculate-form-body:not(:last-child) {
+  margin-bottom: 26px;
+}
+
+.calculate-form-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 30px;
+}
+
+.calculate-input.wide {
+  grid-column: -1 / 1;
+}
+.calculate-input option {
+  background-color: var(--color-dark-alternate); 
+  color: var(--color-light);
+}
+
+.calculate
 @media (max-width: 1919px) {
   .motivation-card-image {
     margin-block: -20px;
