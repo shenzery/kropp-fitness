@@ -836,6 +836,11 @@ input:focus {
   .join-us-title:not(:last-child) {
     margin-bottom: 80px;
   }
+  
+  .location {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 @media (max-width: 767px) {
@@ -916,6 +921,14 @@ input:focus {
     flex-direction: column;
     row-gap: 20px;
     align-items: center;
+  }
+  
+  .location-body {
+    padding-block: 40px;
+  }
+  
+  .location-description:not(:last-child) {
+    margin-bottom: 20px;
   }
 }
 
