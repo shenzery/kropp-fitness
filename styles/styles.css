@@ -309,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
 .backdrop-title.centered::after {
   left: 50%;
   translate: -50% 0;
-  top: -0.5em;
+  top: -0.3em;
 }
 
 .backdrop-title::before {
@@ -331,9 +331,10 @@ h1, h2, h3, h4, h5, h6 {
   text-stroke: 1px var(--color-light-gray);
   position: absolute;
   z-index: -1;
-  top: -0.45em;
+  top: -0.3em;
   left: -0.6em;
   opacity: 0.5;
+  line-height: 1;
 }
 
 .button {
@@ -600,6 +601,11 @@ input:focus {
   margin-bottom: 37px;
 }
 
+.container-wide {
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
 .training-types {
   position: relative;
   padding-top: 70px;
@@ -741,8 +747,35 @@ input:focus {
   justify-content: center;
   column-gap: 20px;
 }
+
 .join-us {
   background-color: var(--color-dark-alternate);
+}
+
+.location {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.location-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 15px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.location-title:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.location-description {
+  max-width: 490px;
+}
+
+.location-description:not(:last-child) {
+  margin-bottom: 37px;
 }
 @media (max-width: 1919px) {
   .motivation-card-image {
