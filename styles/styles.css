@@ -856,7 +856,68 @@ input[type=number] {
   color: var(--color-light);
 }
 
-.calculate
+.calculate-table-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 610px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculate-table-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--color-dark);
+  border-radius: 50%;
+}
+
+.calculate-table {
+  position: relative;
+}
+
+.calculate-table th {
+  padding-block: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--color-light);
+}
+
+.calculate-table :is(td,th) {
+  padding-right: 30px;
+}
+
+.calculate-table :is(td,th):not(:first-child) {
+  padding-left: 30px;
+}
+
+.calculate-table :is(td,th):not(:last-child) {
+  border-right: 1px solid var(--color-light-gray);
+}
+
+.calculate-table tbody td {
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.calculate-table td {
+  padding-block: 14px;
+  text-align: left;
+  color: var(--color-light-gray);
+}
+
+.calculate-table tfoot {
+  color: var(--color-light);
+}
+
+.calculate-table tfoot td {
+  padding-top: 30px;
+  padding-bottom: 0;
+}
 @media (max-width: 1919px) {
   .motivation-card-image {
     margin-block: -20px;
