@@ -1007,6 +1007,13 @@ input[type=number] {
   position: relative;
 }
 
+.footer-logo-image {
+  min-width: 100px;
+  max-width: 270px;
+  height: auto;
+  align-self: center; /* Не дает сетке растягивать картинку по вертикали */
+
+}
 .footer-subscribe-button {
   position: absolute;
   top: 0;
@@ -1136,6 +1143,21 @@ input[type=number] {
   .calculate-table tfoot td {
     padding-top: 10px;
   }
+  
+  .footer-main {
+    padding-block: 80px 50px;
+  }
+  
+  .footer-body {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+  
+  .footer-header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1249,6 +1271,22 @@ input[type=number] {
 
   .calculate {
     padding-block: 60px;
+  }
+  
+  .footer-body {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-main {
+    padding-top: 50px;
+  }
+  
+  .footer-header:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  
+  .footer-subscribe {
+    margin-bottom: 40px;
   }
 }
 
