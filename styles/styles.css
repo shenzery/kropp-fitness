@@ -404,7 +404,7 @@ input[type=number] {
 
 .button.transparent::after {
   content: '';
-  background: url('../icons/arrow.svg') center/80% no-repeat;
+  background: url('../icons/arrow.svg') center/70% no-repeat;
   height: 100%;
   aspect-ratio: 1;
   position: absolute;
@@ -936,6 +936,97 @@ input[type=number] {
   height: 1px;
   background-color: var(--color-light-gray);
 }
+
+.footer-soc1als-link svg {
+  width: 24px;
+  aspect-ratio: 1;
+}
+
+.footer-main {
+  padding-block: 140px 160px;
+}
+
+.footer {
+  --footerLogoWidth : 20.77%;
+}
+
+.footer-header,
+.footer-body {
+  display: grid;
+  column-gap: 62px;
+}
+
+.footer-header {
+  grid-template-columns: var(--footerLogoWidth) auto;
+}
+
+.footer-body {
+  grid-template-columns: var(--footerLogoWidth) repeat(3, 1fr);
+}
+
+.footer-extra {
+  padding-block: 15px;
+  background-color: var(--color-dark-alternate);
+}
+
+.footer-description {
+  text-align: left;
+}
+
+.footer-header:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.footer-column-title {
+  font-size: clamp(18, 1.15vw, 22px);
+}
+
+.footer-column-title:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.footer-shchedule:not(:last-child) {
+  margin-bottom: 13px;
+}
+
+.footer-address:not(:last-child) {
+  margin-bottom: 35px;
+}
+
+.footer-column-title.has-arrow::after {
+  display: inline-block;
+  content: '';
+  width: 0.74em;
+  aspect-ratio: 1;
+  background: url('../icons/join-arrow.svg') center/contain no-repeat;
+  margin-left: 0.5em;
+  scale: -1 -1;
+}
+
+.footer-subscribe {
+  position: relative;
+}
+
+.footer-subscribe-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  background-color: transparent;
+  border: var(--border);
+  border-radius: 50%;
+  background: url('../icons/arrow.svg') center/70% no-repeat;
+}
+
+.footer-subscribe-button:hover {
+  background-color: var(--color-light-gray);
+}
+
+.footer-subscribe-input {
+  padding-right: 70px;
+}
+
 
 @media (max-width: 1919px) {
   .motivation-card-image {
