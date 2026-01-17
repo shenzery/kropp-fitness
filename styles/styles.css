@@ -1027,7 +1027,23 @@ input[type=number] {
   padding-right: 70px;
 }
 
+.footer-subscribe:not(:last-child) {
+  margin-bottom: 50px;
+}
 
+.footer-soc1als-list {
+  display: flex;
+  column-gap: 18px;
+}
+
+.footer-soc1als-link {
+  display: flex;
+  width: 23px;
+}
+
+.footer-copyright {
+  font-size: 14px;
+}
 @media (max-width: 1919px) {
   .motivation-card-image {
     margin-block: -20px;
